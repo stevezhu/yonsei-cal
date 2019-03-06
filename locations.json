@@ -1,0 +1,160 @@
+{
+  "APZH": {
+    "name": "Appenzeller Hall",
+    "korName": "아펜젤러관",
+    "num": "503"
+  },
+  "BilHall": {
+    "name": "Billingsley Hall",
+    "korName": "빌링슬리관",
+    "num": "512"
+  },
+  "BizH": {
+    "name": "School of Business",
+    "korName": "경영관",
+    "num": "212"
+  },
+  "BYH": {
+    "name": "Baekyang Hall",
+    "korName": "백양관",
+    "num": "310"
+  },
+  "Edu": {
+    "name": "Education Sciences Hall",
+    "korName": "교육과학관",
+    "num": "526"
+  },
+  "Den": {
+    "name": "College of Dentistry",
+    "korName": "치과대학",
+    "num": "012"
+  },
+  "DWHA": {
+    "name": "Daewoo Hall Annex",
+    "korName": "대우관 별관",
+    "num": "514",
+    "college": "상경대학"
+  },
+  "DWHM": {
+    "name": "Daewoo Hall Main Building",
+    "korName": "대우관 본관",
+    "num": "513",
+    "college": "상경대학"
+  },
+  "EngHA": {
+    "name": "Engineering Hall 1",
+    "korName": "제1공학관",
+    "num": "121"
+  },
+  "EngHB": {
+    "name": "Engineering Hall 2",
+    "korName": "제2공학관",
+    "num": "122"
+  },
+  "EngHC": {
+    "name": "Engineering Hall 3",
+    "korName": "제3공학관",
+    "num": "123"
+  },
+  "EngHD": {
+    "name": "Engineering Hall 4",
+    "korName": "제4공학관",
+    "num": "124"
+  },
+  "ERC": {
+    "name": "Engineering Research Center",
+    "korName": "공학원",
+    "num": "102"
+  },
+  "GBH": {
+    "name": "Gwangbok Hall",
+    "korName": "광복관",
+    "num": "308"
+  },
+  "Gym": {
+    "name": "Gymnasium",
+    "korName": "체육관",
+    "num": "304"
+  },
+  "Med": {
+    "name": "College of Medicine",
+    "korName": "의대",
+    "num": "002"
+  },
+  "MnAud": {
+    "name": "Main Auditorium",
+    "korName": "대강당",
+    "num": "211"
+  },
+  "MusO": {
+    "name": "College of Music (Old Building)",
+    "korName": "음악관(구관)",
+    "num": "213"
+  },
+  "MusN": {
+    "name": "College of Music (New Building)",
+    "korName": "음악관(신관)",
+    "num": "213"
+  },
+  "NMH": {
+    "name": "New Millenium Hall",
+    "korName": "새천년관",
+    "num": "606"
+  },
+  "Nur": {
+    "name": "College of Nursing",
+    "korName": "간호대학",
+    "num": "014"
+  },
+  "OSH": {
+    "name": "Oesol Hall",
+    "korName": "외솔관",
+    "num": "524"
+  },
+  "PEC": {
+    "name": "Physical Education Center",
+    "korName": "체육교육관",
+    "num": "306"
+  },
+  "SciH": {
+    "name": "Science Hall",
+    "korName": "과학관",
+    "num": "322"
+  },
+  "SRC": {
+    "name": "Science Research Center",
+    "korName": "과학원",
+    "num": "323"
+  },
+  "SSH": {
+    "name": "Samsung Hall",
+    "korName": "삼성관",
+    "num": "325"
+  },
+  "TheoH": {
+    "name": "Theology Hall",
+    "korName": "신학관",
+    "num": "523"
+  },
+  "WDH": {
+    "name": "Widang Hall",
+    "korName": "위당관",
+    "num": "527"
+  },
+  "YHH": {
+    "name": "Yeonhui Hall",
+    "korName": "연희관",
+    "num": "511"
+  },
+  "무용실": {
+    "name": "Outdoor Amphitheatre",
+    "korName": "노천극장",
+    "num": "401"
+  },
+
+  "KLI": {
+    "name": "Korean Language Institute",
+    "korName": "언어연구교육원",
+    "num": "621"
+  }
+}
