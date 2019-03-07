@@ -2,6 +2,7 @@ const fs = require('fs')
 const moment = require('moment-timezone')
 const ics = require('ics')
 
+const PRODUCT_ID = 'YONSEI-CAL/ICS'
 const LABELS = [
   'group',
   'code',
@@ -81,15 +82,10 @@ function getRecurrenceRule(weekday) {
 
 const TIME_RE = /([a-zA-Z]{3})([0-9,]+)/g
 
-function run(filepath, outputFilepath) {
-  const text = fs
-    .readFileSync(filepath)
-    .toString()
-    .slice(0, -1)
-
+function generateICS(input, callback) {
   const events = []
 
-  for (const line of text.split('\n')) {
+  for (const line of input.split('\n')) {
     const data = processLine(line)
 
     const loc = data.location
@@ -100,7 +96,7 @@ function run(filepath, outputFilepath) {
       title: data.title.replace('*', ''),
       description: `${data.code}-${data.sec}-${data.lab} - ${data.instructor}`,
       location: locInfo,
-      productId: 'yonsei-cal/ics',
+      productId: PRODUCT_ID,
     }
 
     // create a new event for each time
@@ -125,7 +121,17 @@ function run(filepath, outputFilepath) {
     }
   }
 
-  ics.createEvents(events, (err, val) => {
+  ics.createEvents(events, callback)
+}
+
+function run(inputFilepath, outputFilepath) {
+  const input = fs
+    .readFileSync(inputFilepath)
+    .toString()
+    .slice(0, -1)
+
+  generateICS(input, (err, val) => {
+    val = val.replace(/BEGIN:VEVENT/g, '\nBEGIN:VEVENT')
     fs.writeFileSync(outputFilepath, val)
   })
 }
