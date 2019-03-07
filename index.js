@@ -33,22 +33,17 @@ function processLine(line) {
   return data
 }
 
-// /**
-//  * Convert period to hour.
-//  * Period 1 is 09:00-09:50, period 9 is 17:00-17:50, etc.
-//  */
-// function periodToHour(period) {
-//   // just add 8 to get the hour
-//   return period + 8
-// }
-
-const LOC_RE = /([a-zA-Z]+?)(\d+)/
+// just returns original location abbr if location is unknown
 function parseLocationInfo(location) {
-  const res = location.split(' ')
-  if (res.length === 2) return res
-
-  const [loc, building, room] = LOC_RE.exec(location)
-  return [building, room]
+  for (const key in LOCATIONS) {
+    const abbr = location.substring(0, key.length)
+    if (key.toLowerCase() == abbr.toLowerCase()) {
+      const room = location.substring(key.length).trim()
+      const { name, num } = LOCATIONS[key]
+      return `(${num}) ${location} - ${name}, Room ${room}`
+    }
+  }
+  return location
 }
 
 function getNextWeekday(time, weekday) {
@@ -98,15 +93,17 @@ function run(filepath, outputFilepath) {
     const data = processLine(line)
 
     const loc = data.location
-    const [building, room] = parseLocationInfo(loc)
+    const locInfo = parseLocationInfo(loc)
 
+    // base event
     const event = {
       title: data.title.replace('*', ''),
       description: `${data.code}-${data.sec}-${data.lab} - ${data.instructor}`,
-      location: `${loc} - ${LOCATIONS[building].name}, Room ${room}`,
+      location: locInfo,
       productId: 'yonsei-cal/ics',
     }
 
+    // create a new event for each time
     const time = data.time
     while (true) {
       const result = TIME_RE.exec(time)
