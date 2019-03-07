@@ -18,8 +18,8 @@ const LABELS = [
   'reference',
 ]
 
-const LOCATIONS = require('./locations.json')
-const DATES = require('./dates.json')
+const LOCATIONS = require('./data/locations.json')
+const DATES = require('./data/dates.json')
 
 // collects the data into an object for each line
 function processLine(line) {
