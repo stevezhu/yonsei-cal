@@ -1,4 +1,3 @@
-const fs = require('fs')
 const moment = require('moment-timezone')
 const ics = require('ics')
 
@@ -124,17 +123,4 @@ function generateICS(input, callback) {
   ics.createEvents(events, callback)
 }
 
-function run(inputFilepath, outputFilepath) {
-  const input = fs
-    .readFileSync(inputFilepath)
-    .toString()
-    .slice(0, -1)
-
-  generateICS(input, (err, val) => {
-    // add newlines between events
-    val = val.replace(/BEGIN:VEVENT/g, '\nBEGIN:VEVENT')
-    fs.writeFileSync(outputFilepath, val)
-  })
-}
-
-run('./temp/calendar.txt', './temp/calendar.ics')
+module.exports = generateICS
